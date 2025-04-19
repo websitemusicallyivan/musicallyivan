@@ -62,36 +62,20 @@
 
   <script src="script.js"></script>
 
-  <audio id="musica" src="MUSICA/Ya Sé No Sé.mp3" preload="auto"></audio>
+  <audio id="musica" src="MUSICA/Ya Sé No Sé.mp3" preload="auto" loop></audio>
+  <button id="btn-musica">🎵 Reproducir música</button>
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const musica = document.getElementById("musica");
+      const boton = document.getElementById("btn-musica");
   
-      // Intentar reproducir al cargar (sin sonido)
-      musica.volume = 25;
-      musica.play().then(() => {
-        // Luego subir el volumen con un botón
-        const btn = document.createElement("button");
-        btn.textContent = "🎵 Activar música";
-        btn.style.position = "fixed";
-        btn.style.bottom = "1rem";
-        btn.style.right = "1rem";
-        btn.style.padding = "0.5rem 1rem";
-        btn.style.borderRadius = "10px";
-        btn.style.border = "none";
-        btn.style.background = "#0077ff";
-        btn.style.color = "white";
-        btn.style.cursor = "pointer";
-        btn.style.zIndex = "1000";
-        document.body.appendChild(btn);
-  
-        btn.addEventListener("click", () => {
-          musica.volume = 1;
-          musica.play();
-          btn.remove(); // ocultar el botón
+      boton.addEventListener("click", () => {
+        musica.play().then(() => {
+          boton.style.display = "none"; // ocultar botón después de iniciar
+        }).catch((error) => {
+          console.log("Error al intentar reproducir:", error);
+          alert("No se pudo reproducir el audio automáticamente.");
         });
-      }).catch((e) => {
-        console.log("El navegador bloqueó la reproducción automática", e);
       });
     });
   </script>
