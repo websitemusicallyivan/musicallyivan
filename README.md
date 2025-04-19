@@ -26,7 +26,7 @@ Sitio web profesional y minimalista hecho con HTML, CSS y JavaScript. Perfecto p
 
 ## 🔗 Demo
 
-👉 [Ver sitio en GitHub Pages](https://tuusuario.github.io/tu-repo)
+👉 [Ver sitio en GitHub Pages](https://websitemusicallyivan.github.io/musicallyivan/)
 
 ## 📬 Contacto
 
