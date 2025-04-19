@@ -1,4 +1,4 @@
-# 🌐 Musically Ivan - Web Minimalista
+# 🌐 Musically Ivan - Tu Influencer Fav de Granada
 
 Sitio web profesional y minimalista hecho con HTML, CSS y JavaScript. Perfecto para mostrar servicios y recibir mensajes mediante un formulario.
 
@@ -17,12 +17,6 @@ Sitio web profesional y minimalista hecho con HTML, CSS y JavaScript. Perfecto p
 ├── script.js
 └── README.md
 ```
-
-## 📦 Cómo usarlo
-
-1. Clona este repositorio
-2. Abre `index.html` en tu navegador o súbelo a GitHub Pages
-3. Reemplaza el `form action` con tu endpoint de Formspree
 
 ## 🔗 Demo
 
