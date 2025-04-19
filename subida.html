@@ -6,16 +6,17 @@
   <title>Sube tu archivo | Musically Ivan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Subida de Archivos</h1>
       <nav>
-        <a href="index.html#inicio">Inicio</a>
-        <a href="index.html#servicios">Servicios</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <button id="toggle-dark">🌙</button>
       </nav>
     </div>
   </header>
@@ -31,16 +32,35 @@
 
   <footer>
     <div class="container">
-      <div class="social-links">
-        <a href="https://instagram.com/musicallyivan" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@musicallyivan" target="_blank" aria-label="YouTube"><i class="fab fa-tiktok"></i></a>
-        <a href="https://tiktok.com/musically.ivan.7" target="_blank" aria-label="TikTok"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/MusicallyIvan" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"</i></a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/musicallyivan" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@musicallyivan" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.facebook.com/musically.ivan.7" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com/MusicallyIvan" target="_blank"><i class="fab fa-twitter"></i></a>
       </div>
       <p>&copy; 2025 Musically Ivan. Todos los derechos reservados.</p>
     </div>
   </footer>
 
+  <script src="script.js"></script>
+
+  <audio id="musica" src="MUSICA/Ya Sé No Sé.mp3" preload="auto" loop></audio>
+  <button id="btn-musica">🎵 Reproducir música</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const musica = document.getElementById("musica");
+      const boton = document.getElementById("btn-musica");
+  
+      boton.addEventListener("click", () => {
+        musica.play().then(() => {
+          boton.style.display = "none"; // ocultar botón después de iniciar
+        }).catch((error) => {
+          console.log("Error al intentar reproducir:", error);
+          alert("No se pudo reproducir el audio automáticamente.");
+        });
+      });
+    });
+  </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const uploadBtn = document.getElementById("upload-btn");
